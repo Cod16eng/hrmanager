@@ -1,0 +1,20 @@
+<h1>Editing User</h1>
+
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+
+	<%= render 'form', user: @user %>
+
+		<div class="row">
+		  <div class="col-md-6">
+		  	<%= link_to '<i class="fas fa-users"></i> Back to users'.html_safe, users_path, 
+					class: "btn btn-outline-secondary btn-sm btn-block" %>
+		
+		</div>
+		<div class="col-md-6">
+			<%= link_to '<i class="fas fa-eye"></i> Show'.html_safe , @user, 
+		                         class: "btn btn-outline-info btn-sm btn-block" %>
+		</div>
+  </div>
+</div>
+

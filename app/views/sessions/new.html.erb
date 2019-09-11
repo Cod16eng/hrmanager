@@ -1,2 +1,23 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<div class="sign-in text-center">	
+	<img class="mb-4" src="http://www.ascheri.net/wp-content/uploads/2019/01/AP-Logo_LastVersion_initials-150x.png" alt="ascheri brand"
+	 width="72" height="72">
+	  
+	  <%= form_for(:sessions, :url => login_path, html: {class:"form-signin", role: "form"}) do |f| %>
+	  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+	  <div class="field">
+        <%= f.label :email, class:'sr-only' %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
+      </div>
+      <div class="field">
+	    <%= f.label :password, class:'sr-only' %><br />
+	    <%= f.password_field :password, autocomplete: "current-password", class:"form-control" %>
+	  </div>
+	  
+	  <div class="checkbox mb-3">
+	    <label>
+	      <input type="checkbox" value="remember-me"> Remember me
+	    </label>
+	  </div>
+	  <%= f.submit "Log in", class:'btn btn-lg btn-primary btn-block' %>	  
+	  <% end %>
+</div>

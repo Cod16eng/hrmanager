@@ -43,6 +43,7 @@ GEM
     arel (8.0.0)
     autoprefixer-rails (9.6.1.1)
       execjs
+    bcrypt (3.1.13)
     bindex (0.8.1)
     bootstrap (4.3.1)
       autoprefixer-rails (>= 9.1.0)
@@ -72,6 +73,8 @@ GEM
     erubi (1.8.0)
     execjs (2.7.0)
     ffi (1.11.1-x86-mingw32)
+    font_awesome5_rails (0.8.0)
+      railties (>= 4.2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.6.0)
@@ -186,10 +189,12 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   bootstrap (~> 4.3.1)
   byebug
   capybara (>= 2.15)
   coffee-rails (~> 4.2)
+  font_awesome5_rails
   jbuilder (~> 2.5)
   jquery-rails
   pg (>= 0.18, < 2.0)

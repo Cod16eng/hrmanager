@@ -1,0 +1,20 @@
+<div class="card" >  
+  <div class="card-body">
+    <h3 class="card-title text-center"><%= @user.full_name %></h3>
+    <p class="card-text"><strong>Admin:</strong>  <%= @user.admin %></p>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><strong>Email:</strong>  <%= @user.email %></li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+      </ul>
+      <br>
+      <div class="row">
+        <div class="col-md-6">
+        <%= link_to '<i class="fas fa-users"></i> Back to users'.html_safe, users_path, class: "btn btn-outline-secondary btn-sm btn-block" %>
+        </div>
+        <div class="col-md-6">
+        <%= link_to '<i class="fas fa-user-edit"></i> Edit user'.html_safe, edit_user_path(@user), class: "btn btn-outline-primary btn-sm btn-block" %>
+        </div>
+      </div>
+  </div>
+</div>
