@@ -1,0 +1,12 @@
+<h1 align="center">New Company</h1>
+<div class="float-left">
+  <%= link_to '<i class="fas fa-caret-left"></i> Back'.html_safe, companies_path, 
+               class: "btn btn-outline-secondary btn-sm" %>
+</div>
+
+<div class="clearfix"></div>
+<br />
+
+<%= render 'form', company: @company %>
+
+

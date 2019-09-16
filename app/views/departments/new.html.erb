@@ -1,5 +1,5 @@
-<h1 align="center">New User</h1>
-	<div class="float-left">
+<h1 align="center">New Department</h1>
+<div class="float-left">
   <%= link_to '<i class="fas fa-caret-left"></i> Back'.html_safe, current_user.company, 
                class: "btn btn-outline-secondary btn-sm" %>
 </div>
@@ -7,4 +7,7 @@
 <div class="clearfix"></div>
 <br />
 
-	<%= render 'form', user: @user %>
+
+<%= render 'form', department: @department %>
+
+

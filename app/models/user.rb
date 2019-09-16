@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-
+	belongs_to :company
+	belongs_to :department
+	has_many :presences
 
 	before_save { self.email = email.downcase }
 

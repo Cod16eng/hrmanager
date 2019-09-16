@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update, :show, :destroy]
-  skip_before_action :require_admin#, only: [:show, :edit, :update]
+  skip_before_action :require_admin, only: [:show]
 
   def index   
-    @users = User.all
+    @users = User.all.order(:last_name)
   end
 
   def new
@@ -52,7 +52,10 @@ class UsersController < ApplicationController
   
   def user_params
     # List of common params
-      list_params_allowed =[:first_name, :middle_name, :last_name, :email, :password, :password_confirmation]
+      list_params_allowed =[:first_name, :middle_name, :last_name, :email, :password, 
+        :password_confirmation, :company_id, :department_id, :dob, :address, :start_date, 
+        :end_date, :position, :holiday, :sick_days, :eveniment, :holiday_taken, :sick_days_taken, 
+        :eveniment_taken, :start_hour]
         # Add the params only for admin
       list_params_allowed << :admin if current_user.admin?
     params.require(:user).permit(list_params_allowed)

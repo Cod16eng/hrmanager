@@ -1,0 +1,13 @@
+<h1 align="center">Edit Department</h1>
+<div class="float-left">
+  <%= link_to '<i class="fas fa-caret-left"></i> Back'.html_safe, current_user.company, 
+               class: "btn btn-outline-secondary btn-sm" %>
+</div>
+<div class="float-right">
+  <%= link_to '<i class="fas fa-eye"></i> View Deparment'.html_safe, @department, 
+              class: "btn btn-outline-secondary btn-sm" %>
+</div>
+<div class="clearfix"></div>
+<br />
+
+<%= render 'form', department: @department %>

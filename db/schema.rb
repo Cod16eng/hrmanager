@@ -10,10 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190910144227) do
+ActiveRecord::Schema.define(version: 20190916082804) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "companies", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "departments", force: :cascade do |t|
+    t.string "name"
+    t.integer "company_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "presences", force: :cascade do |t|
+    t.datetime "date"
+    t.datetime "hour_in"
+    t.integer "user_id"
+    t.datetime "start_hour"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
@@ -24,6 +46,20 @@ ActiveRecord::Schema.define(version: 20190910144227) do
     t.boolean "admin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "company_id"
+    t.integer "department_id"
+    t.date "dob"
+    t.string "address"
+    t.date "start_date"
+    t.date "end_date"
+    t.integer "holiday"
+    t.integer "sick_days"
+    t.integer "eveniment"
+    t.integer "holiday_taken"
+    t.integer "sick_days_taken"
+    t.integer "eveniment_taken"
+    t.string "position"
+    t.datetime "start_hour"
   end
 
 end

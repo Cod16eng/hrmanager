@@ -22,8 +22,8 @@ class ApplicationController < ActionController::Base
 
   def require_admin
     if logged_in? and !current_user.admin?
-      flash[:notice] = "Only Admins can perform that action"
-      redirect_to companies_path
-    end      
+      flash[:danger] = "Only Admins can perform that action"
+      redirect_to current_user
+    end
   end  
 end
