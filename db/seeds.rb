@@ -8,8 +8,8 @@
 Company.delete.all
 Department.delete.all
 User.delete.all
-Company.create!(name: "Test")
-Department.create!(name: "Test", company_id: 1)
-User.create!(first_name: "Codrin", last_name: "Popescu", email: "codrin@ascheri.co.uk", 
+Company.create(name: "Test")
+Department.create(name: "Test", company_id: 1)
+User.create(first_name: "Codrin", last_name: "Popescu", email: "codrin@ascheri.co.uk", 
 			 password: "Codrin31", password_confirmation: "Codrin31", admin: true, 
 			 company_id: 1, department_id: 1)
