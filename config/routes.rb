@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :presences
   resources :departments
-  resources :companies
+  resources :companies, only: [:show,:edit, :update]
   resources :users
 	root 'sessions#new'
     get 'login', to: 'sessions#new'

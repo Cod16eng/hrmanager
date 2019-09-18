@@ -1,6 +1,11 @@
-<h1>Editing Company</h1>
+<h1 align="center">Editing Company</h1>
+<div class="float-left">
+  <%= link_to '<i class="fas fa-caret-left"></i> Back'.html_safe, @company, 
+               class: "btn btn-outline-secondary btn-sm" %>
+</div>
+<div class="clearfix"></div><br>
 
 <%= render 'form', company: @company %>
 
-<%= link_to 'Show', @company %> |
-<%= link_to 'Back', companies_path %>
+
+
