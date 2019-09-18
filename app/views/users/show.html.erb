@@ -90,25 +90,20 @@ Yours Sincerely,
 <div class="card" >  
   <div class="card-body">
     <h3 class="card-title text-center">Presence<% if current_user.admin? %><%= link_to '<i class="fas fa-plus"></i> Add'.html_safe, new_presence_path(:user_id => @user), class: "btn btn-outline-primary btn-sm float-right" %><% end %></h3>
-    <hr>
-    <% unless @user.presences.nil? ||  @user.presences == 0 %>
-    <div align="center" class="alert alert-success"><h3><%= @user.full_name %> There are no presences, Add one everyday</h3></div>
-    <% else %>
-                 
-                     
+    <hr>                      
     <div class="container">
-    <div class="row">
+      <div class="row">
         <% @user.presences.order(date: :desc).limit(20).each_slice(5)  do |list| %> 
         <div class="col-md-3">
 
         <% list.each do |presence| %>
         
-        <table class="table table-bordered" align="center" >
+          <table class="table table-bordered" align="center" >
           
             <tbody class="float-lest">             
-            <tr align="center">
-              <th colspan="3" ><%= presence.date.strftime("%d %b %Y") %></th>
-            </tr> 
+              <tr align="center">
+                <th colspan="3" ><%= presence.date.strftime("%d %b %Y") %></th>
+              </tr> 
             
               <td align="center"><%= presence.hour_in.strftime("%H : %M") %></td>            
               <td align="center"><%= link_to '<i class="fas fa-edit"></i>'.html_safe, edit_presence_path(presence), class: "btn btn-outline-primary btn-sm" %> | 
@@ -137,8 +132,7 @@ Yours Sincerely,
       <% end %>
     </div>
   </div>
-  
-   <% end %>
+
   </div>
 </div>
 

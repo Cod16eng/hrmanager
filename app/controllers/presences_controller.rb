@@ -55,15 +55,15 @@ class PresencesController < ApplicationController
   # DELETE /presences/1.json
   def destroy
     @presence.destroy
-    if Presence.exists?
+    #if Presence.exists?
       respond_to do |format|
       format.html { redirect_to @presence.user, notice: 'Presence was successfully destroyed.' }      
       end      
-    else
-      respond_to do |format|
-      format.html { redirect_to users_path, notice: 'Presence was successfully destroyed.' }      
-      end      
-    end
+    #else
+     # respond_to do |format|
+     # format.html { redirect_to users_path, notice: 'Presence was successfully destroyed.' }      
+    #  end      
+    #end
     
   end
 
