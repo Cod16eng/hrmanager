@@ -13,13 +13,11 @@
 
   <% if params[:action] == "new" %>
     <%= form.hidden_field :user_id, :value => params[:user_id].html_safe %>
-    <% else %>
+  <% else %>
     <%= form.hidden_field :user_id %>
-  <% end %>
+  <% end %> 
 
-  
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.button(@presence.new_record? ? '<i class="fas fa-user-plus"></i> Create presence'.html_safe : '<i class="fas fa-paper-plane"></i> Update presence'.html_safe, class: "btn btn-outline-success btn-sm btn-block")  %>
   </div>
 <% end %>

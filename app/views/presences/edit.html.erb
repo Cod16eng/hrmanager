@@ -1,6 +1,10 @@
-<h1>Editing Presence</h1>
+<h1 align="center">Edit Presence</h1>
 
 <%= render 'form', presence: @presence %>
 
-<%= link_to 'Show', @presence %> |
-<%= link_to 'Back', presences_path %>
+<div class="row">
+	<div class="col-md-12">
+		<%= link_to '<i class="fas fa-users"></i> Back to user'.html_safe, @presence.user, 
+					class: "btn btn-outline-secondary btn-sm btn-block" %>
+	</div>
+</div>
