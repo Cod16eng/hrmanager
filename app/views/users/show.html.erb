@@ -90,7 +90,11 @@ Yours Sincerely,
 <div class="card" >  
   <div class="card-body">
     <h3 class="card-title text-center">Presence<% if current_user.admin? %><%= link_to '<i class="fas fa-plus"></i> Add'.html_safe, new_presence_path(:user_id => @user), class: "btn btn-outline-primary btn-sm float-right" %><% end %></h3>
-    <hr><% if Presence.exists? %> 
+    <hr><% if @user.presence == nil %>
+    <div align="center"><h3> There are no presences, Add one everyday</h3></div>
+    <% else %>
+                 
+                     
     <div class="container">
     <div class="row">
         <% @user.presences.order(date: :desc).limit(20).each_slice(5)  do |list| %> 
@@ -132,9 +136,7 @@ Yours Sincerely,
       <% end %>
     </div>
   </div>
-  <% else %>
-                 <div><h2> There are no presences</h2>  </div>
-                     
+  
    <% end %>
   </div>
 </div>
